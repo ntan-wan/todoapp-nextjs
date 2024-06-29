@@ -8,13 +8,15 @@ interface IProps {
   placeholder?: string;
   readOnly?: boolean;
   onClick?: () => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
 }
 
 const variants = {
 	base: "w-full c-input  bg-blue-100 p-2 rounded-md",
 };
 
-export function CustomInput({ className, placeholder, icon, iconPosition = "right", ...props }: IProps) {
+export function CustomInput({ className, placeholder, icon,  iconPosition = "right", ...props }: IProps) {
   return (
     <div className='relative w-full'>
 
