@@ -5,7 +5,6 @@ import {CustomInput} from "@/ui/CustomInput";
 import {CustomButton} from "@/ui/CustomButton";
 import {TaskList} from "@/components/TaskList";
 import * as taskServices from "@/services/taskService";
-import {sleep} from "@/src/app/_lib/utils/core";
 import {ITask} from "@/types/index";
 
 interface IProps {
@@ -29,7 +28,6 @@ export default function TaskPage({tasks} : IProps) {
 			setIsLoading(true);
 			await taskServices.createTask(payload);
 			setTaskInput("");
-			await sleep(300);
 			location.reload();
 		} catch (err) {
 			console.error(err);
