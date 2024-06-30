@@ -5,33 +5,45 @@ export const dynamic = "force-dynamic"; // defaults to auto
 
 const prisma = new PrismaClient();
 
-export async function GET(request: NextRequest) {
+export async function GET() {
 	let res = NextResponse;
-	const title = "hello world";
 
-	// await taskService.createTask("Learn Javascript");
-	return res.json({msg: title});
+	try {
+		const tasks = await prisma.task.findMany();
+		return res.json(tasks);
+	} catch (err) {
+		console.error(err);
+	}
 }
 
 export async function POST(request: Request) {
 	const res = NextResponse;
 	const reqData = await request.json();
-	const data =  {
-		title: reqData.title
-	}
+	const data = {
+		title: reqData.title,
+	};
 
 	try {
 		const task = await prisma.task.create({data});
-		return res.json({status: 200, data: task, msg: 'success'});
+		return res.json({status: 200, data: task, msg: "success"});
 	} catch (error) {
 		console.error(error);
 	}
 }
 
 export async function PUT(request: Request) {
-	let res = NextResponse;
+	const res = NextResponse;
+	const reqData = await request.json();
+	const updateTask = await prisma.task.update({
+		where: {
+			id: reqData.taskId,
+		},
+		data: {
+			completed: reqData.completed,
+		},
+	})
 
-	return res.json({msg: "PUT tasks"});
+	return res.json({status: 200, data: updateTask, msg: "success"});
 }
 
 export async function DELETE(request: Request) {

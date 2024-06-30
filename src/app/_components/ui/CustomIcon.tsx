@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from "@/lib/utils/core";
+import { cn } from "@/src/app/_lib/utils/core";
 import { useEffect, useState } from "react";
 
 interface IProps {

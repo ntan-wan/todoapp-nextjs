@@ -1,5 +1,5 @@
-import {cn} from "@/lib/utils/core";
-import {CustomIcon} from "@/src/app/ui/CustomIcon";
+import {cn} from "@/src/app/_lib/utils/core";
+import {CustomIcon} from "@/ui/CustomIcon";
 
 interface IProps {
 	className?: string;
@@ -8,7 +8,7 @@ interface IProps {
 	iconPosition?: string;
 	variant?: string;
 	loading?: boolean;
-	onClick?: () => void;
+	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 	type?: string;
 }
 

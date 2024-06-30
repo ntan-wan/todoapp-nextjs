@@ -1,6 +1,9 @@
-import {callApi} from "@/lib/utils/callApi";
+import {api} from "@/src/app/_lib/utils/api";
 
 export async function createTask(payload : object) {
-	await callApi.post("/api/tasks", payload);
+	await api.post("/api/tasks", payload);
+}
 
+export async function updateTask(payload: object) {
+	await api.put("/api/tasks", payload);
 }

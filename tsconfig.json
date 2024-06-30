@@ -20,11 +20,12 @@
     "baseUrl": "./src/",
     "paths": {
 			"@/src/*": ["*"],
-			"@/ui/*": ["app/ui/*"],
-			"@/components/*": ["app/components/*"],
-			"@/utils/*": ["app/lib/utils/*"],
-			"@/lib/*": ["app/lib/*"],
-			"@/services/*": ["app/services/*"]
+			"@/ui/*": ["app/_components/ui/*"],
+			"@/components/*": ["app/_components/*"],
+			"@/utils/*": ["app/_lib/utils/*"],
+			"@/lib/*": ["app/_lib/*"],
+			"@/services/*": ["app/services/*"],
+			"@/types/*": ["app/types/*"]
 		}
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

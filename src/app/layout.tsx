@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { cn } from "@/utils/core";
+import { cn } from "@/src/app/_lib/utils/core";
 import {CustomNavbar} from "@/ui/CustomNavbar";
 import {CustomFooter} from "@/ui/CustomFooter";
 import "./globals.css";
