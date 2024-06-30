@@ -1,6 +1,7 @@
 import TaskPage from "./TaskPage";
 import {PrismaClient} from "@prisma/client";
 
+export const dynamic = "force-dynamic"; // defaults to auto
 
 export default async function Page() {
 

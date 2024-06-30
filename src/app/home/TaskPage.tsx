@@ -11,8 +11,6 @@ interface IProps {
 	tasks: ITask[]
 }
 
-export const dynamic = "force-dynamic";
-
 
 export default function TaskPage({tasks} : IProps) {
 	const [isLoading, setIsLoading] = useState(false);

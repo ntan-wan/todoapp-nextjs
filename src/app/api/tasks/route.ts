@@ -1,7 +1,6 @@
 import {PrismaClient} from "@prisma/client";
 import {NextRequest, NextResponse} from "next/server";
 
-export const dynamic = "force-dynamic"; // defaults to auto
 
 const prisma = new PrismaClient();
 
@@ -9,7 +8,11 @@ export async function GET() {
 	let res = NextResponse;
 
 	try {
-		const tasks = await prisma.task.findMany();
+		const tasks = await prisma.task.findMany({
+			orderBy: {
+				createdAt: "desc",
+			},
+		});
 		return res.json(tasks);
 	} catch (err) {
 		console.error(err);
